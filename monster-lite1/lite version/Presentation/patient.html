@@ -1,0 +1,148 @@
+<html>
+<head>
+        <link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/java.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #242256;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #aa9f9f;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: #5753ce;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #575757;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<center><h1 style="color:#242256; font-size: 45px; margin-left: 110px;"> Gestion d'hospitalition  </h1></center>
+<body>
+
+<div class="sidenav">
+    	<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+		width="100" height="100"
+		viewBox="0 0 172 172"
+		style=" fill:#000000;    margin-left: 48px;
+        margin-bottom: 53px;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#ffffff"><path d="M30.96,13.76c-9.45834,0 -17.2,7.74166 -17.2,17.2v110.08c0,9.45834 7.74166,17.2 17.2,17.2h110.08c9.45834,0 17.2,-7.74166 17.2,-17.2v-110.08c0,-9.45834 -7.74166,-17.2 -17.2,-17.2zM30.96,20.64h110.08c5.73958,0 10.32,4.58042 10.32,10.32v110.08c0,5.73958 -4.58042,10.32 -10.32,10.32h-110.08c-5.73958,0 -10.32,-4.58042 -10.32,-10.32v-110.08c0,-5.73958 4.58042,-10.32 10.32,-10.32zM55.04,48.16v75.68h13.76v-30.96h34.4v30.96h13.76v-75.68h-13.76v30.96h-34.4v-30.96z"></path></g></g></svg>
+	
+        <button class="dropdown-btn"><img class="img2" src="Images/image2.png">patient
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-container">
+                <a href="#" onclick="affiche('source/AjouteC.html')">ajouter </a>
+                <a href="#" onclick="affiche('source/patientinfo.html')"> rechercher</a>
+                <a href="#" onclick="affiche('source/supatien.html')"> supprimer</a>
+                <a href="#" onclick="affiche('source/PIN.php')"> informations</a>
+                <a href="#" onclick="affiche('source/patientsinfo.html')"> modifier</a>
+              </div>
+              <button class="dropdown-btn"><img class="img2" src="Images/image1.png">service 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-container">
+                    <a href="#" >ajouter</a>
+                    <a href="#">supprimer</a>
+                   
+                  </div>
+                  <button class="dropdown-btn"><img class="img2" src="Images/image3.png">medecin 
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-container">
+                        <a href="#"onclick="affiche('source/AjouteCompte.html')" >ajouter</a>
+                        <a href="#" onclick="affiche('source/searchmed.html')">rechercher</a>
+                        <a href="#" onclick="affiche('source/supmed.html')"> supprimer</a>
+                      </div>
+  
+  <button class="dropdown-btn"><img class="img2" src="Images/image4.png">hospitalisation 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#"  onclick="affiche('source/infoshospital.html')">afficher</a>
+    <a href="#"  onclick="affiche('source/virement.html')">ajouter</a>
+    
+  </div>
+ 
+		
+</div>
+<iframe src="vide.html" id="iframe"></iframe>
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 

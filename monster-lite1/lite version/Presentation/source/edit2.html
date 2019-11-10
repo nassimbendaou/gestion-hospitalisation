@@ -1,0 +1,51 @@
+<html>
+	<head>
+	<link href="css.css" rel="stylesheet" type="text/css">
+	</head>
+	<body style="background-color:white !important">
+	
+		<table>
+			<form action="../../Metie/traitement3.php" method="post" >
+			<tr>
+				
+				<td style="color:rgb(83, 80, 80)">ID medecin : </td>
+				<td><input type="t" name="medecinID"></td>
+			</tr>
+			
+			<tr>
+					<td style="color:rgb(83, 80, 80)">Nom : </td>
+					<td><input type="t" name="nom"></td>
+			</tr>
+			<tr>
+				<td style="color:rgb(83, 80, 80)">Service : </td>
+				<td><select name="serviceID">
+                    <option value="médecine générale">médecine générale</option>
+                    <option value="immunologie">immunologie</option>
+                    <option value="radiologie">radiologie</option>
+                    <option value="chirurgie">chirurgie</option>
+                    <option value="neurologie">neurologie</option>
+                    <option value="pneumologie">pneumologie</option>
+                    <option value="cardiologie">cardiologie</option>
+                    <option value="odontologie">odontologie</option>
+                    <option value="dermatologie">dermatologie</option>
+                    <option value="traitement des urgences">traitement des urgences</option>
+                    <option value="traumatologie">traumatologie</option>
+                    <option value="endocrinologie">endocrinologie</option>
+                    <option value="anatomo-pathologie">anatomo-pathologie</option>
+                    <option value="maternité">maternité</option>
+                    <option value="Pédiatrie">Pédiatrie</option>
+                    <option value="pharmacie">pharmacie</option>
+
+                  </select></td>
+			</tr>
+			
+			<tr>
+				<td></td><td><input type="submit" value="upgrade"><input type="reset" value="sup"></td>
+			</tr>
+			<tr style="display:none">
+				<td><input name="type" value="11"></td>
+			</tr>
+			</form>
+		</table>
+	</body>
+</html>

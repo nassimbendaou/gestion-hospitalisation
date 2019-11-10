@@ -1,0 +1,32 @@
+table {
+	width: 702px;
+	border-collapse: collapse ;
+}
+
+/* Paramètres pour les cellules classiques ET les cellules d'en-tête */
+table th, table td {
+	border: 1px solid #1048ff ;	
+	padding: 5px ;
+}
+
+/* Paramètres pour les lignes d'en-tête uniquement */
+table thead tr {
+	background-color: #1048ff ;
+	color: #ffffff ; 
+}
+
+/* Paramètres pour les lignes de contenu */
+table tbody tr {
+	background-color: #f2ecfe ;
+}
+
+/* Paramètres pour les lignes de contenu paires */
+table tbody tr:nth-child(2n) { 
+	background-color: #f9f6ff ;
+}
+
+/* Paramètres pour les lignes de contenu au survol de la souris */
+table tbody tr:hover { 
+	background-color: #001fa9 ;
+	color: #ffffff ; 
+}
